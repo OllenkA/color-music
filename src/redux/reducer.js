@@ -63,7 +63,6 @@ const reducer = (state = initialState, action) => {
     }
 };
 
-
 export const startPlayMusic = () => ({type: START_PLAY_MUSIC});
 
 export default reducer;
