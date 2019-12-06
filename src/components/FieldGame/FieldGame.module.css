@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 1050px;
+    height: 384px;
+}
+
+.block{
+    width: 1000px;
+    height: 85px;
+}
+
+.cell{
+    width: 60px;
+    height: 60px;
+    border: 2px solid black;
+    margin: 0;
+}
