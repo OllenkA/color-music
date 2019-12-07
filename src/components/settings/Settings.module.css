@@ -1,0 +1,7 @@
+.settings{
+    position: fixed;
+    right: 10px;
+    top: 100px;
+    /*bottom: 10px;*/
+    /*width: calc(100% - 20px);*/
+}

@@ -1,11 +1,28 @@
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .container{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
-    width: 1050px;
-    height: 384px;
+}
+
+.audio{
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    width: calc(100% - 20px);
+}
+
+.input{
+    position: fixed;
+    right: 10px;
+    font-weight: bold;
+
 }
 
 .block{
@@ -17,5 +34,6 @@
     width: 60px;
     height: 60px;
     border: 2px solid black;
+    border-radius: 2px;
     margin: 0;
 }

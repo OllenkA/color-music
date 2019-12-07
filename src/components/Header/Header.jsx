@@ -3,8 +3,8 @@ import React from 'react';
 
 function Header() {
     return (
-        <div className="header">
-            <h1>LIGHT ORGAN</h1>
+        <div>
+            <h1 style={{marginTop: 0}}>LIGHT ORGAN</h1>
         </div>
     );
 }

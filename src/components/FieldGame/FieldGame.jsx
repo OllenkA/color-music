@@ -1,78 +1,46 @@
 import React, {useRef, useState} from 'react';
-import styles from './FieldGame.module.css';
-import {connect} from "react-redux";
-// import one from '../../audio/1.mp3'
-import {startPlayMusic} from "../../redux/reducer";
+import colorCreator from "../../utils/colorCreator";
+import audioPlayer from "../../utils/AudioPlayer";
+import FieldGameView from "./FieldGameView";
 
 function FieldGame(props) {
+    const audioElRef = useRef(null);
+    const [data, setData] = useState([]);
+    // const [isButtonPressed, pressButton] = useState(false);
+    const [fieldSize, setFieldSize] = useState('');
+    const [theme, setTheme] = useState('');
 
-    const [data, setData] = useState([1,34]);
+    const newData = (fieldSize === '55') ? data.slice(0, 25) : (fieldSize === '102') ?
+        data.slice(0, 20) : data.slice(0, 144);
 
-
-    console.log(data)
-    let cells = data.map((el, i) => {
-        // let r = el;
-        // let g = 0;
-        // let b = 255 - el;
-        let r = el + (25 * (i/128));
-        let g = 250 * (i/128);
-        let b = 50;
-        let newColor = "rgb(" + r + "," + g + "," + b + ")";
-        // console.log(newColor);
-        // console.log(el);
-        return <div key={i}
-                        style={{backgroundColor: newColor}}
-                        // style={{backgroundColor: el.color, opacity: el.brightness}}
-                        className={styles.cell}>
-        </div>
-    });
-
-    let setMusic = (e) => {
+    let setMusic = async (e) => {
         let file = e.target.files[0];
-        audioEl.current.src = URL.createObjectURL(file);
-        audioEl.current.load();
-        audioEl.current.play();
-        let context = new AudioContext();
-        let src = context.createMediaElementSource(audioEl.current);
-        let analyser = context.createAnalyser();
-        src.connect(analyser);
-        analyser.connect(context.destination);
-        analyser.fftSize = 256;
+        if (!file) return;
 
-        let bufferLength = analyser.frequencyBinCount;
-        let dataArray = new Uint8Array(bufferLength);
-        function renderFrame() {
-            requestAnimationFrame(renderFrame);
-            // x = 0;
-            analyser.getByteFrequencyData(dataArray);
-            setData(Array.from(dataArray))
-            console.log(dataArray)
-        }
-        audioEl.current.play();
+        audioPlayer.setFileAndPlay(audioElRef.current, file);
+        let {analyser, dataArray} = audioPlayer.createAnalyser(audioElRef.current, file);
+
         renderFrame();
 
+        function renderFrame() {
+            requestAnimationFrame(renderFrame);
+            analyser.getByteFrequencyData(dataArray);
+            setData(Array.from(dataArray))
+        }
     };
 
+    let fieldWidth = colorCreator.getFieldStyle(+fieldSize)
 
-
-    const audioEl = useRef(null);
-
-    return (<>
-            <button onClick={props.startPlayMusic}>Listen music</button>
-            <input type='file' accept='audio/*' onChange={setMusic}/>
-            <audio ref={audioEl} controls={true}/>
-            <article className={styles.container}>
-
-                {cells}
-            </article>
-        </>
+    return (
+        <FieldGameView audioElRef={audioElRef}
+                       fieldWidth={fieldWidth}
+                       setFieldSize={setFieldSize}
+                       setMusic={setMusic}
+                       setTheme={setTheme}
+                       theme={theme}
+                       newData={newData}
+        />
     );
 }
 
-const mapStateToProps = (state) => {
-    return {
-        colors: state.main.colors,
-    }
-};
-
-export default connect(mapStateToProps, {startPlayMusic})(FieldGame);
+export default FieldGame;
