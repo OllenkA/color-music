@@ -6,7 +6,7 @@ const ChooseSizeField = (props) => {
 
     const fields = fieldsArray.map((el, i) => {
         return <label key={i} className={styles.choose}>
-            <span>{el}</span>
+            <span><b>{el}</b></span>
             <input type='radio' onChange={(e) => props.setFieldSize(e.target.value)}
                    name='field' value={el}/>
         </label>
@@ -14,7 +14,7 @@ const ChooseSizeField = (props) => {
 
     return (
         <fieldset>
-            <legend><h3>Choose size field:</h3></legend>
+            <legend><h3>Choose field size:</h3></legend>
             <section className={styles.wrapper}>
             {fields}
             </section>

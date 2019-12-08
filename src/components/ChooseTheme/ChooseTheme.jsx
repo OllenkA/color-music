@@ -9,9 +9,8 @@ const ChooseTheme = (props) => {
     const theme = themes.map((el, i) => {
         return <label key={i} className={styles.element}>
             <input type='radio' onChange={(e) => props.setTheme(e.target.value)}
-                   name='theme'
-                   value={el}/>
-            <span>{el}</span>
+                   name='theme' value={el}/>
+            <span><b>{el}</b></span>
         </label>
     });
 
