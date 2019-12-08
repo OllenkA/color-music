@@ -1,0 +1,12 @@
+.chooseTheme{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.element{
+    width: 40%;
+    margin: 10px;
+}

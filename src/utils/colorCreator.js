@@ -6,7 +6,7 @@ const colorCreator = {
         let a = 255 / el;
 
         switch (theme) {
-            case 'six-colors':
+            case 'Six-colors':
                 r = (el < 40) ? el : 0;
                 r = (el > 75 && el < 120) ? el : r;
                 r = (el > 160 && el < 210) ? el : r;
@@ -17,7 +17,7 @@ const colorCreator = {
                 b = (el > 130 && el < 180) ? el : b;
                 b = (el > 220) ? el : b;
                 break;
-            case 'blue-green-red':
+            case 'Blue-green-red':
                 r = (el < 30) ? el : 0;
                 r = (el > 85 && el < 110) ? el : r;
                 r = (el > 170 && el < 200) ? el : r;
@@ -28,10 +28,35 @@ const colorCreator = {
                 b = (el > 140 && el < 170) ? el : b;
                 b = (el > 230) ? el : b;
                 break;
-            case 'red-blue':
+            case 'Red-blue':
                 r = el;
                 g = 0;
                 b = 255 - el;
+                break;
+            case 'Green-blue':
+                r = 0;
+                g = el;
+                b = 255 - el;
+                break;
+            case 'Blue-green':
+                r = 0;
+                g = 255 - el;
+                b = el;
+                break;
+            case 'Pink-blue':
+                r = el;
+                g = 255 - el;
+                b = 255;
+                break;
+            case 'Red-green':
+                r = el;
+                g = 255 - el;
+                b = 0;
+                break;
+            case 'Pink-green':
+                r = el;
+                g = 255 - el;
+                b = el;
                 break;
             default:
                 r = 255 - el;
