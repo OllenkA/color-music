@@ -61,7 +61,7 @@ function PageStart() {
                 <a href={'https://github.com/OllenkA/color-music'}
                    target="_blank" rel="noreferrer noopener">
                     {isLanguageEn ? "Look the code of the completed task" :
-                        "Посмотреть на код выполненного задания"}</a>
+                        "Посмотреть код выполненного задания"}</a>
             </section>
             {descriptions[isLanguageEn]}
         </article>
