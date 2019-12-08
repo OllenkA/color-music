@@ -27,6 +27,9 @@ function PageStart() {
                 <li>можно выбрать «тему» — диапазон цветов которые появляются на визуализаторе.</li>
             </ul>
             <h3>Задача выполнена с помощью библиотеки React.</h3>
+            <p>Вы можете выбрать свою любимую песню кликнув на кнопку выбрать файл.</p>
+            <p>Выбирать размер игрового поля и тему и перед началом проигрывания
+                и в процессе прослушивания песни.</p>
         </section>,
         true: <section>
             <h3>Description of the task:</h3>
@@ -48,6 +51,9 @@ function PageStart() {
                 <li>you can select the “theme” - the range of colors that appear on the visualizer.</li>
             </ul>
             <h3>Task completed using React library.</h3>
+            <p>You can select your favorite song by clicking on the select file button.</p>
+            <p>Choose the size of the playing field and theme, both before playing and
+                in the process of listening to a song.</p>
         </section>
     };
 
