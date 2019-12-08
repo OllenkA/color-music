@@ -30,6 +30,7 @@ function PageStart() {
             <p>Вы можете выбрать свою любимую песню кликнув на кнопку выбрать файл.</p>
             <p>Выбирать размер игрового поля и тему и перед началом проигрывания
                 и в процессе прослушивания песни.</p>
+            <p>Музыку можно найти в папке <b>src</b> -> <b>audio</b></p>
         </section>,
         true: <section>
             <h3>Description of the task:</h3>
@@ -54,6 +55,7 @@ function PageStart() {
             <p>You can select your favorite song by clicking on the select file button.</p>
             <p>Choose the size of the playing field and theme, both before playing and
                 in the process of listening to a song.</p>
+            <p>Music can be found in the <b>src</b> -> <b>audio folder</b></p>
         </section>
     };
 
