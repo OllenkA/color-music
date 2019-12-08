@@ -4,7 +4,6 @@ const colorCreator = {
         let g = 0;
         let b = 0;
         let a = 255 / el;
-
         switch (theme) {
             case 'Six-colors':
                 r = (el < 40) ? el : 0;
@@ -63,42 +62,40 @@ const colorCreator = {
                 g = el;
                 b = 255 - el;
         }
-
         return "rgb(" + r + "," + g + "," + b + "," + a + ")";
-
-
     },
     getFieldStyle(fieldSize) {
-        fieldSize = +fieldSize;
-
         switch (fieldSize) {
-            case 102:
+            case '10*2':
                 return {width: 10 * 54 + 'px', height: 2 * 54 + 'px'};
-            case 55:
+            case '5*5':
                 return {width: 5 * 54 + 'px', height: 5 * 54 + 'px'};
-            case 169:
+            case '16*9':
                 return {width: 16 * 54 + 'px', height: 9 * 54 + 'px'};
-            case 1010:
+            case '10*10':
                 return {width: 10 * 54 + 'px', height: 10 * 54 + 'px'};
-            case 128:
+            case '12*8':
                 return {width: 12 * 54 + 'px', height: 8 * 54 + 'px'};
+            case '17*10':
+                return {width: 17 * 54 + 'px', height: 10 * 54 + 'px'};
             default:
                 return {width: 16 * 54 + 'px', height: 9 * 54 + 'px'};
         }
     },
     getNewData(fieldSize, data){
-        fieldSize = +fieldSize;
         switch (fieldSize) {
-            case 102:
+            case '10*2':
                 return data.slice(0, 20);
-            case 55:
+            case '5*5':
                 return data.slice(0, 25);
-            case 169:
+            case '16*9':
                 return data.slice(0, 144);
-            case 1010:
+            case '10*10':
                 return data.slice(0, 100);
-            case 128:
+            case '12*8':
                 return data.slice(0, 96);
+            case '17*10':
+                return data.slice(0, 170);
             default:
                 return data.slice(0, 144);
         }

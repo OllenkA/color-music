@@ -26,7 +26,7 @@ function FieldGameView({setMusic, audioElRef, fieldWidth,
                 {isButtonPressed ? <article className={styles.container} style={fieldWidth}>
                     {cells}
                 </article> : <PageStart/>}
-                <Settings setField={setFieldSize} setTheme={setTheme}/>
+                <Settings setFieldSize={setFieldSize} setTheme={setTheme}/>
             </section>
         </article>
     );

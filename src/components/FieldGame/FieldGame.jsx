@@ -29,7 +29,7 @@ function FieldGame() {
         }
     };
 
-    let fieldWidth = colorCreator.getFieldStyle(+fieldSize);
+    let fieldWidth = colorCreator.getFieldStyle(fieldSize);
 
     return (
         <FieldGameView audioElRef={audioElRef}
