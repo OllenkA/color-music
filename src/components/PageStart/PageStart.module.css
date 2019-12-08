@@ -1,0 +1,21 @@
+.taskDescription{
+    width: 69%;
+}
+
+.taskDescription a{
+    color: black;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.taskDescription a:hover{
+    opacity: .5;
+    transition: 1s;
+}
+
+.buttonAndHref{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}

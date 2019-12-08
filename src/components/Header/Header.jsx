@@ -1,12 +1,11 @@
 import React from 'react';
-// import './App.css';
+import styles from './Header.module.css';
+
 
 function Header() {
-    return (
-        <div>
-            <h1 style={{marginTop: 0}}>LIGHT ORGAN</h1>
-        </div>
-    );
+    return <header className={styles.header} >
+            <h1>VISUALIZER</h1>
+        </header>
 }
 
 export default Header;

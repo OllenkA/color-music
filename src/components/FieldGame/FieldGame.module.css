@@ -1,8 +1,9 @@
 .wrapper{
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px 100px;
 }
 
 .container{
@@ -13,16 +14,28 @@
 
 .audio{
     position: fixed;
-    left: 10px;
-    bottom: 10px;
-    width: calc(100% - 20px);
+    right: 20px;
+    bottom: 90px;
+    width: calc(50% - 20px);
+}
+.audioSection{
+    /*position: fixed;*/
+    top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100vw;
 }
 
 .input{
     position: fixed;
-    right: 10px;
+    left: 20px;
+    bottom: 90px;
     font-weight: bold;
-
+    font-size: large;
+    padding: 0;
+    width: calc(50% - 20px);
 }
 
 .block{
@@ -31,8 +44,8 @@
 }
 
 .cell{
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border: 2px solid black;
     border-radius: 2px;
     margin: 0;

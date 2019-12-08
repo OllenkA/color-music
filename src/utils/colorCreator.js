@@ -6,7 +6,7 @@ const colorCreator = {
         let a = 255 / el;
 
         switch (theme) {
-            case 'red-blue':
+            case 'six-colors':
                 r = (el < 40) ? el : 0;
                 r = (el > 75 && el < 120) ? el : r;
                 r = (el > 160 && el < 210) ? el : r;
@@ -17,7 +17,7 @@ const colorCreator = {
                 b = (el > 130 && el < 180) ? el : b;
                 b = (el > 220) ? el : b;
                 break;
-            case 'blue-green':
+            case 'blue-green-red':
                 r = (el < 30) ? el : 0;
                 r = (el > 85 && el < 110) ? el : r;
                 r = (el > 170 && el < 200) ? el : r;
@@ -28,30 +28,56 @@ const colorCreator = {
                 b = (el > 140 && el < 170) ? el : b;
                 b = (el > 230) ? el : b;
                 break;
+            case 'red-blue':
+                r = el;
+                g = 0;
+                b = 255 - el;
+                break;
             default:
                 r = 255 - el;
                 g = el;
                 b = 255 - el;
-
-
         }
 
-        let newColor = "rgb(" + r + "," + g + "," + b + "," + a + ")";
-        return newColor;
+        return "rgb(" + r + "," + g + "," + b + "," + a + ")";
+
 
     },
     getFieldStyle(fieldSize) {
         fieldSize = +fieldSize;
 
-        switch (fieldSize){
+        switch (fieldSize) {
             case 102:
-                return { width: 10*64+ 'px', height: 2*64 + 'px'};
+                return {width: 10 * 54 + 'px', height: 2 * 54 + 'px'};
             case 55:
-                return { width: 5*64+ 'px', height: 5*64 + 'px' };
+                return {width: 5 * 54 + 'px', height: 5 * 54 + 'px'};
+            case 169:
+                return {width: 16 * 54 + 'px', height: 9 * 54 + 'px'};
+            case 1010:
+                return {width: 10 * 54 + 'px', height: 10 * 54 + 'px'};
+            case 128:
+                return {width: 12 * 54 + 'px', height: 8 * 54 + 'px'};
             default:
-                return {width: 16*64 + 'px', height: 9*64 + 'px'};
+                return {width: 16 * 54 + 'px', height: 9 * 54 + 'px'};
+        }
+    },
+    getNewData(fieldSize, data){
+        fieldSize = +fieldSize;
+        switch (fieldSize) {
+            case 102:
+                return data.slice(0, 20);
+            case 55:
+                return data.slice(0, 25);
+            case 169:
+                return data.slice(0, 144);
+            case 1010:
+                return data.slice(0, 100);
+            case 128:
+                return data.slice(0, 96);
+            default:
+                return data.slice(0, 144);
         }
     }
-}
+};
 
 export default colorCreator;

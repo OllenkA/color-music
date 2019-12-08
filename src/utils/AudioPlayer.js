@@ -13,7 +13,7 @@ const audioPlayer = {
         let contextNew = new AudioContext();
         //setContext(contextNew);
         //pressButton(true);
-        let src2 = contextNew.createMediaElementSource(audioEl)
+        let src2 = contextNew.createMediaElementSource(audioEl);
         let analyser = contextNew.createAnalyser();
         src2.connect(analyser);
         analyser.connect(contextNew.destination);
@@ -22,14 +22,12 @@ const audioPlayer = {
         let dataArray = new Uint8Array(bufferLength);
 
         //audioEl.play();
-
         this._data = {
             analyser,
             dataArray
         };
-
         return this._data;
     }
-}
+};
 
 export default audioPlayer;

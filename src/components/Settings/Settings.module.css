@@ -1,0 +1,15 @@
+.settings{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    right: 10px;
+    top: 85px;
+    width: 30%;
+}
+
+.choose{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

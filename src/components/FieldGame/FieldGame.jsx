@@ -3,19 +3,19 @@ import colorCreator from "../../utils/colorCreator";
 import audioPlayer from "../../utils/AudioPlayer";
 import FieldGameView from "./FieldGameView";
 
-function FieldGame(props) {
+function FieldGame() {
     const audioElRef = useRef(null);
     const [data, setData] = useState([]);
-    // const [isButtonPressed, pressButton] = useState(false);
+    const [isButtonPressed, pressButton] = useState(false);
     const [fieldSize, setFieldSize] = useState('');
     const [theme, setTheme] = useState('');
 
-    const newData = (fieldSize === '55') ? data.slice(0, 25) : (fieldSize === '102') ?
-        data.slice(0, 20) : data.slice(0, 144);
+    const newData = colorCreator.getNewData(fieldSize, data);
 
     let setMusic = async (e) => {
         let file = e.target.files[0];
         if (!file) return;
+        pressButton(true);
 
         audioPlayer.setFileAndPlay(audioElRef.current, file);
         let {analyser, dataArray} = audioPlayer.createAnalyser(audioElRef.current, file);
@@ -29,7 +29,7 @@ function FieldGame(props) {
         }
     };
 
-    let fieldWidth = colorCreator.getFieldStyle(+fieldSize)
+    let fieldWidth = colorCreator.getFieldStyle(+fieldSize);
 
     return (
         <FieldGameView audioElRef={audioElRef}
@@ -39,6 +39,7 @@ function FieldGame(props) {
                        setTheme={setTheme}
                        theme={theme}
                        newData={newData}
+                       isButtonPressed={isButtonPressed}
         />
     );
 }

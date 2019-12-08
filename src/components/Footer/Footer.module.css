@@ -1,0 +1,48 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 80px;
+    background-color: #88ffbb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blockTitle {
+    font-style: italic;
+    font-weight: 700;
+    color: black;
+}
+
+.socialBlock {
+    display: flex;
+    justify-content: space-between;
+}
+
+.socialIcon {
+    padding: 3px 10px;
+    text-decoration: none;
+    color: black;
+    opacity: .5;
+    transition: 1s;
+}
+
+.socialIcon:hover, .hrefToPortfolio:hover {
+    opacity: 1;
+}
+
+.hrefToPortfolio{
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    opacity: 0.5;
+    transition: 1s;
+}
