@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "14926d393f598876938b299771379f53",
+    "revision": "5ec7bb3ea97bf5aac8c96cb10bc2f457",
     "url": "/color-music/index.html"
   },
   {
-    "revision": "64c80dac856b8d4f068b",
+    "revision": "53cf7a5b16bb460df391",
     "url": "/color-music/static/css/main.c2790ac8.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/color-music/static/js/2.21b041e9.chunk.js.LICENSE"
   },
   {
-    "revision": "64c80dac856b8d4f068b",
-    "url": "/color-music/static/js/main.11c7b119.chunk.js"
+    "revision": "53cf7a5b16bb460df391",
+    "url": "/color-music/static/js/main.c877ca82.chunk.js"
   },
   {
     "revision": "790131103513099f6b8e",
