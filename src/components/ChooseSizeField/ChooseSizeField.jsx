@@ -7,7 +7,8 @@ const ChooseSizeField = (props) => {
     const fields = fieldsArray.map((el, i) => {
         return <label key={i} className={styles.choose}>
             <span><b>{el}</b></span>
-            <input type='radio' onChange={(e) => props.setFieldSize(e.target.value)}
+            <input type='radio'
+                   onChange={(e) => props.setFieldSize(e.target.value)}
                    name='field' value={el}/>
         </label>
     });
